@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">10 Minute Test</string>
+    <string name="video_1_1">Video 1_1</string>
+    <string name="document_1_1">Document 1_1</string>
+    <string name="video_1_2">Video 1_2</string>
+    <string name="chapter_1">Chapter 1</string>
+    <string name="document_2_1">Document 2_1</string>
+    <string name="video_2_1">Video 2_1</string>
+    <string name="video_2_2">Video 2_2</string>
+    <string name="audio_2_1">Audio 2_1</string>
+    <string name="chapter_2">Chapter 2</string>
+    <string name="video_3_0">Video 3_0</string>
+    <string name="document_4_0">Document 4_0</string>
+    <string name="audio_5">Audio 5</string>
+</resources>
