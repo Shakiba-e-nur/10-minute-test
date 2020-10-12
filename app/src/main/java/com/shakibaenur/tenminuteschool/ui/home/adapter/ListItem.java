@@ -1,8 +1,5 @@
-package com.shakibaenur.tenminuteschool.ui.home;
-
-import com.shakibaenur.tenminuteschool.ui.model.SubItem;
+package com.shakibaenur.tenminuteschool.ui.home.adapter;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
-
 import java.util.List;
 
 public class ListItem extends ExpandableGroup<SubItem> {

@@ -1,4 +1,4 @@
-package com.shakibaenur.tenminuteschool.ui.home;
+package com.shakibaenur.tenminuteschool.ui.home.adapter;
 
 import android.view.View;
 import android.widget.TextView;
@@ -11,7 +11,7 @@ public class ItemViewHolder extends GroupViewHolder {
     private TextView itemTitle;
     public ItemViewHolder(View itemView) {
         super(itemView);
-        itemTitle=itemView.findViewById(R.id.text_view_item);
+        itemTitle=itemView.findViewById(R.id.text_view_document);
     }
     public String getItemTitle()
     {

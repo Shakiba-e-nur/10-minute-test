@@ -31,7 +31,7 @@
             android:padding="@dimen/paddin_4">
 
             <TextView
-                android:id="@+id/text_view_item"
+                android:id="@+id/text_view_document"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins_bold"

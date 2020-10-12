@@ -9,10 +9,13 @@
         android:roundIcon="@mipmap/ic_ten_minute_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.document.DocumentActivity"></activity>
-        <activity android:name=".ui.video.VideoActivity" />
+        <activity android:name=".ui.document.DocumentActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".ui.video.VideoActivity"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".ui.home.HomeActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

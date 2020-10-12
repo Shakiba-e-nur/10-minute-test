@@ -1,4 +1,4 @@
-package com.shakibaenur.tenminuteschool.ui.model;
+package com.shakibaenur.tenminuteschool.ui.home.adapter;
 
 
 import android.os.Parcel;

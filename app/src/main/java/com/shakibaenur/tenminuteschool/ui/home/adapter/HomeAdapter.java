@@ -1,17 +1,12 @@
-package com.shakibaenur.tenminuteschool.ui.home;
-
-
+package com.shakibaenur.tenminuteschool.ui.home.adapter;
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.shakibaenur.tenminuteschool.R;
-import com.shakibaenur.tenminuteschool.ui.document.DocumentActivity;
-import com.shakibaenur.tenminuteschool.ui.model.SubItem;
-import com.shakibaenur.tenminuteschool.ui.video.VideoActivity;
+import com.shakibaenur.tenminuteschool.util.AppConstants;
 import com.thoughtbot.expandablerecyclerview.ExpandableRecyclerViewAdapter;
 import com.thoughtbot.expandablerecyclerview.listeners.OnGroupClickListener;
 import com.thoughtbot.expandablerecyclerview.models.ExpandableGroup;
@@ -21,13 +16,13 @@ import java.util.List;
 public class HomeAdapter extends ExpandableRecyclerViewAdapter<ItemViewHolder, SubItemViewHolder> {
     private LayoutInflater mInflater;
     Context context;
-    int position=0;
-    public HomeAdapter(Context context,List<? extends ExpandableGroup> groups) {
+    private HomeAdapterActionListener homeAdapterActionListener;
+    public HomeAdapter(Context context, List<? extends ExpandableGroup> groups,HomeAdapterActionListener homeAdapterActionListener) {
         super(groups);
         this.context=context;
+        this.homeAdapterActionListener = homeAdapterActionListener;
         mInflater = LayoutInflater.from(context);
     }
-
     @Override
     public ItemViewHolder onCreateGroupViewHolder(ViewGroup parent, int viewType) {
         View view = mInflater.inflate(R.layout.item_list, parent, false);
@@ -57,7 +52,10 @@ public class HomeAdapter extends ExpandableRecyclerViewAdapter<ItemViewHolder, S
             holder.setOnGroupClickListener(new OnGroupClickListener() {
                 @Override
                 public boolean onGroupClick(int flatPos) {
-                    context.startActivity(new Intent(context,VideoActivity.class));
+                    if(homeAdapterActionListener!=null)
+                    {
+                        homeAdapterActionListener.OnActionPerformed(AppConstants.TypeAction.ACTION_VIDEO);
+                    }
                     return false;
                 }
             });
@@ -67,7 +65,10 @@ public class HomeAdapter extends ExpandableRecyclerViewAdapter<ItemViewHolder, S
             holder.setOnGroupClickListener(new OnGroupClickListener() {
                 @Override
                 public boolean onGroupClick(int flatPos) {
-                    context.startActivity(new Intent(context, DocumentActivity.class));
+                    if(homeAdapterActionListener!=null)
+                    {
+                        homeAdapterActionListener.OnActionPerformed(AppConstants.TypeAction.ACTION_DOCUMENT);
+                    }
                     return false;
                 }
             });
@@ -82,5 +83,8 @@ public class HomeAdapter extends ExpandableRecyclerViewAdapter<ItemViewHolder, S
                 }
             });
         }
+    }
+    public interface HomeAdapterActionListener{
+        void OnActionPerformed(int typeAction);
     }
 }
